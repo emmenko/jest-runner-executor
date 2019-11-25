@@ -1,0 +1,66 @@
+{
+  "name": "jest-runner-executor",
+  "version": "1.0.0",
+  "description": "A general purpose executor that allows to run any script as a Jest runner",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": "https://github.com/emmenko/jest-runner-executor/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emmenko/jest-runner-executor.git"
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
+  "main": "src/index.js",
+  "scripts": {
+    "format": "yarn format:js && yarn format:md",
+    "format:js": "prettier --write '**/*.js'",
+    "format:md": "prettier --write --parser markdown '**/*.md'",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "cosmiconfig": "6.0.0",
+    "create-jest-runner": "0.5.3",
+    "lodash.kebabcase": "4.1.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.2.0",
+    "@commitlint/config-conventional": "8.2.0",
+    "eslint": "6.1.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "6.7.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jest": "23.0.4",
+    "eslint-plugin-prettier": "3.1.1",
+    "husky": "3.1.0",
+    "jest": "24.9.0",
+    "jest-watch-typeahead": "0.4.2",
+    "lint-staged": "9.4.3",
+    "prettier": "1.19.1",
+    "remark-cli": "7.0.1",
+    "remark-preset-lint-recommended": "3.0.3"
+  },
+  "jest": {
+    "projects": [
+      "jest.markdown.config.js",
+      "jest.test.config.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended",
+      [
+        "remark-lint-list-item-indent",
+        false
+      ]
+    ]
+  }
+}
